@@ -89,9 +89,9 @@ This highlights how it is often easier to reason about how a unit *should work* 
 
 For a less trivial example, we have some [stubbed out tests](https://github.com/MaayanLab/unittesting/blob/master/test_enrichr.py) for verifying that Enrichr's API works as expected. Enrichr's API has two relevant methods:
 
-> `POST /Enrichr/addList`: Accepts a POST request with a newline-separated list of gene symbols and a description. Returns a `userListId` identifying the uploaded gene list.
+> **`POST /Enrichr/addList`:** Accepts a POST request with a newline-separated list of gene symbols and a description. Returns a `userListId` identifying the uploaded gene list.
 
-> `GET /Enrichr/view?dataset={userListId}`: Returns a list of genes associated with a `userListId`. 
+> **`GET /Enrichr/view?dataset={userListId}`:** Returns a list of genes associated with a `userListId`. 
 
 Notice the function `setUp`. The `unittest.TestCase` instance will automatically call this function before every unit test. Thus, the call stack for `TestEnrichr` is:
 
@@ -105,4 +105,4 @@ Notice the function `setUp`. The `unittest.TestCase` instance will automatically
 ## Caveats
 - A passing test does not mean the code is correct.
 - Unit tests do not replace functional tests. A functional test tests a slice of functionality of the whole software system, based on the specificationss.
-- Taking the time to write tests will never be prioritized. You should do it for your own peace of mind.
+- Taking the time to write tests will never be prioritized. You should do it for your own peace of mind. And for your users.
