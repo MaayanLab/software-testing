@@ -3,7 +3,7 @@
 - _Ma'ayan lab meeting_
 - _22 January 2015_
 
-### Basics of unit testing
+## Basics of unit testing
 > What is a unit test?
 
 A unit test verifies that individual units of code work as expected.
