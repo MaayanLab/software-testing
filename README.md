@@ -34,7 +34,7 @@ When the unit's interface was intentionally changed. You should **never** change
 
 Example test suite
 
-![Unit tests](assets/screenshot-nose.png)
+<img src="assets/screenshot-nose.png" width="200px"/>
 
 Example unit test
 
