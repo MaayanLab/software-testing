@@ -6,7 +6,7 @@ import unittest
 from numbers import is_odd
 
 
-class IsOdd(unittest.TestCase):
+class TestIsOdd(unittest.TestCase):
 
     # TODO: Implement this function.
     def testOddNumber(self):

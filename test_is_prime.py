@@ -6,7 +6,7 @@ import unittest
 from numbers import is_prime
 
 
-class IsPrime(unittest.TestCase):
+class TestIsPrime(unittest.TestCase):
 
     # TODO: Implement this function.
     def testPrimeNumber(self):
