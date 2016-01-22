@@ -85,7 +85,7 @@ Next, let's fill out the [tests for `is_prime()`](https://github.com/MaayanLab/u
 
 This highlights how it is often easier to reason about how a unit *should work* rather than how it *does work*. We all know the basic definition of a prime number, but it can be easy to write code that does not do what we think, because we do not check the edge cases.
 
-##### Testing Enrichr's API
+### Testing Enrichr's API
 
 For a less trivial example, we have some [stubbed out tests](https://github.com/MaayanLab/unittesting/blob/master/test_enrichr.py) for verifying that Enrichr's API works as expected. Enrichr's API has two relevant methods:
 
