@@ -8,7 +8,7 @@ import time
 import unittest
 
 
-class TestEnrichrAPI(unittest.TestCase):
+class TestEnrichr(unittest.TestCase):
 
     BASE_URL = 'http://amp.pharm.mssm.edu/Enrichr'
 
