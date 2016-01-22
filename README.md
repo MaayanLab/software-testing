@@ -1,32 +1,30 @@
 # Unit testing
-- _Gregory Gundersen_
-- _Ma'ayan lab meeting_
-- _22 January 2015_
+_Gregory Gundersen, Ma'ayan lab meeting, 22 January 2015_
 
 ## Basics of unit testing
-> What is a unit test?
+> **What is a unit test?**
 
 A unit test verifies that individual units of code work as expected.
 
-> What is a "unit"?
+> **What is a "unit"?**
 
 A testable part of your program, typically a function, because possible larger.
 
-> Why should I unit test?
+> **Why should I unit test?**
 
 Here are just a few reasons:
 - **Stability:** Running unit tests before you deploy verifies that the code in production is similar to the code you are about to deploy.
 - **Modularization:** Writing unit tests encourages you to think of and write code as units.
 - **Scalability:** Developing a large codebase among multiple developers is nearly impossible without at least some testing. In fact, your code already benefits from modularization and unit testing. For example, when you use `pandas`, you benefit from the fact that someone else writes code that they test.
 
-> When should I write unit tests?
+> **When should I write unit tests?**
 
 We are not a software engineering team, and there are not any expectations for unit testing. Bny tests you write are better than none. Some guidelines:
 
 - **When the code is mission critical,** such as a complex algorithm that performs an essential computational step. For example, you don't want to perform differential expression analysis, and get the Characteristic Direction wrong.
 - **When you find a bug.** Think of it as penance for releasing code that does not work as expected. This is a kind of [boyscount refactoring](http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule).
 
-> When can you change a failing test?
+> **When can you change a failing test?**
 
 When the unit's interface was intentionally changed. You should **never** change a failing unit test because you do not know why it is failing or because you're fed up with it failing.
 
@@ -76,7 +74,8 @@ class TestStringMethods(unittest.TestCase):
 First, let's fill out the [tests for `is_odd`](https://github.com/MaayanLab/unittesting/blob/master/test_is_odd.py). Use the `self.assert*` methods to make assertions about the output of the unit based on the input. For example:
 
 ```python
-self.assertTrue(is_odd(3)) // This test should pass
+# This test should pass
+self.assertTrue(is_odd(3))
 ```
 
 At any point, type `nosetests` to check if your test is passing.
