@@ -16,6 +16,7 @@ Here are just a few reasons:
 - **Stability:** Running unit tests before you deploy verifies that the code in production is similar to the code you are about to deploy.
 - **Modularization:** Writing unit tests encourages you to think of and write code as units.
 - **Scalability:** Developing a large codebase among multiple developers is nearly impossible without at least some testing. In fact, your code already benefits from modularization and unit testing. For example, when you use `pandas`, you benefit from the fact that someone else writes code that they test.
+- Wikipedia has a nice [list of benefits](https://en.wikipedia.org/wiki/Unit_testing#Benefits).
 
 > **When should I write unit tests?**
 
