@@ -3,7 +3,7 @@
 - _Ma'ayan lab meeting_
 - _22 January 2015_
 
-## Basics of unit testing
+### Basics of unit testing
 > What is a unit test?
 
 A unit test verifies that individual units of code work as expected.
@@ -15,9 +15,9 @@ A testable part of your program, typically a function, because possible larger.
 > Why should I unit test?
 
 Here are just a few reasons:
-- **Stability:** Running unit tests before you deploy verifies that the code in production is similar to the code you are about to deploy. 
-- **Modularization:**
-- **Scalability**
+- **Stability:** Running unit tests before you deploy verifies that the code in production is similar to the code you are about to deploy.
+- **Modularization:** Writing unit tests encourages you to think of and write code as units.
+- **Scalability:** Developing a large codebase among multiple developers is nearly impossible without at least some testing. In fact, your code already benefits from modularization and unit testing. For example, when you use `pandas`, you benefit from the fact that someone else writes code that they test.
 
 > When should I write unit tests?
 
@@ -30,11 +30,17 @@ We are not a software engineering team, and there are not any expectations for u
 
 When the unit's interface was intentionally changed. You should **never** change a failing unit test because you do not know why it is failing or because you're fed up with it failing.
 
-## Examples
+### Examples
+
+Example test suite
+
+![Unit tests](assets/screenshot-nose.png)
+
+Example unit test
 
 ![Unit tests](assets/screenshot-unittest.png)
 
-## Setup in Python
+### Setup in Python
 
 ##### Unittest module
 `unittest` is a built-in Python module for writing unit tests. A test case is created by subclassing `unittest.TestCase`. For example:
@@ -56,7 +62,7 @@ class TestStringMethods(unittest.TestCase):
 - nose will run any tests inside files with a "test" (case insensitive) prefix
 - Use `-v` to see test names and output
 
-## Caveats
+### Caveats
 - A passing test does not mean the code is correct.
 - Unit tests do not replace functional tests. A functional test tests a slice of functionality of the whole software system, based on the specificationss.
 - Taking the time to write tests will never be prioritized. You should do it for your own peace of mind.
