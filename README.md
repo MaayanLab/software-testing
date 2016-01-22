@@ -42,8 +42,7 @@ Example unit test
 
 ## Setup in Python
 
-You will need:
-- 
+You will need
 - `unittest`: this is a built-in Python module.
 - `pip` - If you don't have pip, use [this script](https://bootstrap.pypa.io/get-pip.py) to download it. Run `python get-pip.py` after downloading the script.
 - `nose` - [nose](https://nose.readthedocs.org/en/latest/) is a small program for easily running Python unit tests. Once you have pip installed, run `pip install nose`.
@@ -86,6 +85,10 @@ At any point, type `nosetests` to check if your test is passing.
 Next, let's fill out the [tests for `is_prime()`](https://github.com/MaayanLab/unittesting/blob/master/test_is_prime.py). This time, the function has a small bug. It does not work as expected. Fill out the unit tests, and you should see one of them fail.
 
 This highlights how it is often easier to reason about how a unit *should work* rather than how it *does work*. We all know the basic definition of a prime number, but it can be easy to write code that does not do what we think, because we do not check the edge cases.
+
+##### A less trivial example: testing Enrichr's API
+
+
 
 ## Caveats
 - A passing test does not mean the code is correct.
