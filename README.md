@@ -30,11 +30,11 @@ We are not a software engineering team, and there are not any expectations for u
 
 When the unit's interface was intentionally changed. You should **never** change a failing unit test because you do not know why it is failing or because you're fed up with it failing.
 
-### Examples
+## Examples
 
 ![Unit tests](assets/screenshot-unittest.png)
 
-### Setup in Python
+## Setup in Python
 
 ##### Unittest module
 `unittest` is a built-in Python module for writing unit tests. A test case is created by subclassing `unittest.TestCase`. For example:
@@ -56,7 +56,7 @@ class TestStringMethods(unittest.TestCase):
 - nose will run any tests inside files with a "test" (case insensitive) prefix
 - Use `-v` to see test names and output
 
-### Caveats
+## Caveats
 - A passing test does not mean the code is correct.
 - Unit tests do not replace functional tests. A functional test tests a slice of functionality of the whole software system, based on the specificationss.
 - Taking the time to write tests will never be prioritized. You should do it for your own peace of mind.
