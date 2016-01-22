@@ -13,7 +13,7 @@ class TestEnrichr(unittest.TestCase):
     BASE_URL = 'http://amp.pharm.mssm.edu/Enrichr'
 
     def setUp(self):
-        with open('genes.txt') as f:
+        with open('assets/genes.txt') as f:
             self.input_genes = [l.strip().upper() for l in f]
 
         url = self.BASE_URL + '/addList'
