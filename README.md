@@ -3,7 +3,7 @@
 - _Ma'ayan lab meeting_
 - _22 January 2015_
 
-### Basics of unit testing
+## Basics of unit testing
 > What is a unit test?
 
 A unit test verifies that individual units of code work as expected.
@@ -30,17 +30,17 @@ We are not a software engineering team, and there are not any expectations for u
 
 When the unit's interface was intentionally changed. You should **never** change a failing unit test because you do not know why it is failing or because you're fed up with it failing.
 
-### Examples
+## Examples
 
 Example test suite
 
-<img src="assets/screenshot-nose.png" width="600px"/>
+<img src="assets/screenshot-nose.png" width="500px"/>
 
 Example unit test
 
-<img src="assets/screenshot-unittest.png" width="600px"/>
+<img src="assets/screenshot-unittest.png" width="500px"/>
 
-### Setup in Python
+## Setup in Python
 
 You will need:
 - 
@@ -69,7 +69,7 @@ class TestStringMethods(unittest.TestCase):
 - nose will run any tests inside files with a "test" (case insensitive) prefix
 - Use `-v` to see test names and output
 
-### Let's write some tests
+## Let's write some tests
 
 [`numbers`](https://github.com/MaayanLab/unittesting/blob/master/numbers.py) is a small Python "library" for numerical computing. We're going to test the library's two functions, `is_odd` and `is_prime`.
 
@@ -87,7 +87,7 @@ Next, let's fill out the [tests for `is_prime()`](https://github.com/MaayanLab/u
 
 This highlights how it is often easier to reason about how a unit *should work* rather than how it *does work*. We all know the basic definition of a prime number, but it can be easy to write code that does not do what we think, because we do not check the edge cases.
 
-### Caveats
+## Caveats
 - A passing test does not mean the code is correct.
 - Unit tests do not replace functional tests. A functional test tests a slice of functionality of the whole software system, based on the specificationss.
 - Taking the time to write tests will never be prioritized. You should do it for your own peace of mind.
