@@ -68,7 +68,7 @@ class TestStringMethods(unittest.TestCase):
 
 ## Let's write some tests
 
-[`numbers`](https://github.com/MaayanLab/unittesting/blob/master/numbers.py) is a small Python "library" for numerical computing. We're going to test the library's two functions, `is_odd` and `is_prime`.
+[`numbers`](https://github.com/MaayanLab/unittesting/blob/master/numbers.py) is a small Python "library" for numerical computing. We're going to test the library's two functions, `is_odd()` and `is_prime()`.
 
 ### is_odd()
 First, let's fill out the [tests for `is_odd`](https://github.com/MaayanLab/unittesting/blob/master/test_is_odd.py). Use the `self.assert*` methods to make assertions about the output of the unit based on the input. For example:
