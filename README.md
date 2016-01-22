@@ -34,11 +34,9 @@ When the unit's interface was intentionally changed. You should **never** change
 
 Example test suite
 
-![Unit tests](assets/screenshot-nose.png)
 
 Example unit test
 
-![Unit tests](assets/screenshot-unittest.png)
 
 ### Setup in Python
 
