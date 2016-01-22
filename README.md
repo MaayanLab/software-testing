@@ -34,11 +34,11 @@ When the unit's interface was intentionally changed. You should **never** change
 
 Example test suite
 
-<img src="assets/screenshot-nose.png" width="400px"/>
+<img src="assets/screenshot-nose.png" width="600px"/>
 
 Example unit test
 
-<img src="assets/screenshot-unittest.png" width="400px"/>
+<img src="assets/screenshot-unittest.png" width="600px"/>
 
 ### Setup in Python
 
