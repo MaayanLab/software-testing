@@ -33,7 +33,7 @@ Since many of our applications share a typical pipeline, `input gene list -> ana
 
 We can write functional tests for web applications by automating the browser with Selenium. Here's an example:
 
-```
+```python
 from selenium import webdriver
 
 # Create an instance of the Firefox web browser. There are drivers for other 
