@@ -51,3 +51,19 @@ input_.send_keys('test')
 submit_btn = browser.find_element_by_id('sblsbb')
 submit_btn.click()
 ```
+
+Testing Enrichr:
+
+```python
+from selenium import webdriver
+browser = webdriver.Firefox()
+browser.get('http://amp.pharm.mssm.edu/Enrichr/')
+a = browser.find_element_by_id('insertCrispExample-link')
+a.click()
+submit_btn = browser.find_element_by_id('proceed-button')
+submit_btn.click()
+chea = browser.find_element_by_id('ChEA_2015-link')
+chea.click()
+term = browser.find_element_by_xpath('//div[@class="svg-container"]/*[name()="svg"]/*[name()="g"]')
+print(term.text)
+```
