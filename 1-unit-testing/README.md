@@ -69,10 +69,10 @@ class TestStringMethods(unittest.TestCase):
 
 ## Let's write some tests
 
-[`numbers`](https://github.com/MaayanLab/software-testing/blob/master/unit-testing/numbers.py) is a small Python "library" for numerical computing. We're going to test the library's two functions, `is_odd()` and `is_prime()`.
+[`numbers`](https://github.com/MaayanLab/software-testing/blob/master/1-unit-testing/numbers.py) is a small Python "library" for numerical computing. We're going to test the library's two functions, `is_odd()` and `is_prime()`.
 
 ### is_odd()
-First, let's fill out the [tests for `is_odd`](https://github.com/MaayanLab/software-testing/blob/master/unit-testing/test_is_odd.py). Use the `self.assert*` methods to make assertions about the output of the unit based on the input. For example:
+First, let's fill out the [tests for `is_odd`](https://github.com/MaayanLab/software-testing/blob/master/1-unit-testing/test_is_odd.py). Use the `self.assert*` methods to make assertions about the output of the unit based on the input. For example:
 
 ```python
 # This test should pass
@@ -82,13 +82,13 @@ self.assertTrue(is_odd(3))
 At any point, type `nosetests` to check if your test is passing.
 
 ### is_prime()
-Next, let's fill out the [tests for `is_prime()`](https://github.com/MaayanLab/software-testing/blob/master/unit-testing/test_is_prime.py). This time, the function has a small bug. It does not work as expected. Fill out the unit tests, and you should see one of them fail.
+Next, let's fill out the [tests for `is_prime()`](https://github.com/MaayanLab/software-testing/blob/master/1-unit-testing/test_is_prime.py). This time, the function has a small bug. It does not work as expected. Fill out the unit tests, and you should see one of them fail.
 
 This highlights how it is often easier to reason about how a unit *should work* rather than how it *does work*. We all know the basic definition of a prime number, but it can be easy to write code that does not do what we think, because we do not check the edge cases.
 
 ### Testing Enrichr's API
 
-For a less trivial example, we have some [stubbed out tests](https://github.com/MaayanLab/software-testing/blob/master/unit-testing/test_enrichr.py) for verifying that Enrichr's API works as expected. Enrichr's API has two relevant methods:
+For a less trivial example, we have some [stubbed out tests](https://github.com/MaayanLab/software-testing/blob/master/1-unit-testing/test_enrichr.py) for verifying that Enrichr's API works as expected. Enrichr's API has two relevant methods:
 
 > **`POST /Enrichr/addList`:** Accepts a POST request with a newline-separated list of gene symbols and a description. Returns a `userListId` identifying the uploaded gene list.
 
