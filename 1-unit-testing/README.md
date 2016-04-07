@@ -1,5 +1,5 @@
 # Unit testing
-_Gregory Gundersen, Ma'ayan lab meeting, 22 January 2015_
+_Gregory Gundersen, Ma'ayan Lab meeting, 22 January 2015_
 
 ## Basics of unit testing
 > **What is a unit test?**
