@@ -56,14 +56,21 @@ Testing Enrichr:
 
 ```python
 from selenium import webdriver
+
 browser = webdriver.Firefox()
 browser.get('http://amp.pharm.mssm.edu/Enrichr/')
+
+# Submit the example crisp set
 a = browser.find_element_by_id('insertCrispExample-link')
 a.click()
 submit_btn = browser.find_element_by_id('proceed-button')
 submit_btn.click()
+
+# Select the ChEA_2015 library results
 chea = browser.find_element_by_id('ChEA_2015-link')
 chea.click()
+
+# Select the first term
 term = browser.find_element_by_xpath('//div[@class="svg-container"]/*[name()="svg"]/*[name()="g"]')
 print(term.text)
 ```
