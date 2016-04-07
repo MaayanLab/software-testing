@@ -45,7 +45,7 @@ You will need
 - `unittest`: this is a built-in Python module.
 - `pip` - If you don't have pip, use [this script](https://bootstrap.pypa.io/get-pip.py) to download it. Run `python get-pip.py` after downloading the script.
 - `nose` - [nose](https://nose.readthedocs.org/en/latest/) is a small program for easily running Python unit tests. Once you have pip installed, run `pip install nose`.
-- This repo has some unit tests already stubbed out. Run `git clone https://github.com/MaayanLab/unittesting.git` to clone the repo to your current directory.
+- This repo has some unit tests already stubbed out. Run `git clone https://github.com/MaayanLab/software-testing/unit-testing.git` to clone the repo to your current directory.
 
 ### Unittest module
 `unittest` is a built-in Python module for writing unit tests. A test case is created by subclassing `unittest.TestCase`. For example:
@@ -69,10 +69,10 @@ class TestStringMethods(unittest.TestCase):
 
 ## Let's write some tests
 
-[`numbers`](https://github.com/MaayanLab/unittesting/blob/master/numbers.py) is a small Python "library" for numerical computing. We're going to test the library's two functions, `is_odd()` and `is_prime()`.
+[`numbers`](https://github.com/MaayanLab/software-testing/unit-testing/blob/master/numbers.py) is a small Python "library" for numerical computing. We're going to test the library's two functions, `is_odd()` and `is_prime()`.
 
 ### is_odd()
-First, let's fill out the [tests for `is_odd`](https://github.com/MaayanLab/unittesting/blob/master/test_is_odd.py). Use the `self.assert*` methods to make assertions about the output of the unit based on the input. For example:
+First, let's fill out the [tests for `is_odd`](https://github.com/MaayanLab/software-testing/unit-testing/blob/master/test_is_odd.py). Use the `self.assert*` methods to make assertions about the output of the unit based on the input. For example:
 
 ```python
 # This test should pass
@@ -82,13 +82,13 @@ self.assertTrue(is_odd(3))
 At any point, type `nosetests` to check if your test is passing.
 
 ### is_prime()
-Next, let's fill out the [tests for `is_prime()`](https://github.com/MaayanLab/unittesting/blob/master/test_is_prime.py). This time, the function has a small bug. It does not work as expected. Fill out the unit tests, and you should see one of them fail.
+Next, let's fill out the [tests for `is_prime()`](https://github.com/MaayanLab/software-testing/unit-testing/blob/master/test_is_prime.py). This time, the function has a small bug. It does not work as expected. Fill out the unit tests, and you should see one of them fail.
 
 This highlights how it is often easier to reason about how a unit *should work* rather than how it *does work*. We all know the basic definition of a prime number, but it can be easy to write code that does not do what we think, because we do not check the edge cases.
 
 ### Testing Enrichr's API
 
-For a less trivial example, we have some [stubbed out tests](https://github.com/MaayanLab/unittesting/blob/master/test_enrichr.py) for verifying that Enrichr's API works as expected. Enrichr's API has two relevant methods:
+For a less trivial example, we have some [stubbed out tests](https://github.com/MaayanLab/software-testing/unit-testing/blob/master/test_enrichr.py) for verifying that Enrichr's API works as expected. Enrichr's API has two relevant methods:
 
 > **`POST /Enrichr/addList`:** Accepts a POST request with a newline-separated list of gene symbols and a description. Returns a `userListId` identifying the uploaded gene list.
 
