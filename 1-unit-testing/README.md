@@ -4,7 +4,7 @@ _Gregory Gundersen, Ma'ayan Lab meeting, 22 January 2015_
 ## Basics of unit testing
 > **What is a unit test?**
 
-A unit test verifies that individual units of code work as expected.
+A unit test verifies that an individual unit of code works as expected.
 
 > **What is a "unit"?**
 
