@@ -44,8 +44,8 @@ browser = webdriver.Firefox()
 browser.get('http://www.google.com')
 
 # Use Selenium's API to select and input text into the input field.
-input = browser.find_element_by_id("lst-ib")
-input.send_keys('test')
+input_ = browser.find_element_by_id("lst-ib")
+input_.send_keys('test')
 
 # Select and click the submit button.
 submit_btn = browser.find_element_by_id('sblsbb')
