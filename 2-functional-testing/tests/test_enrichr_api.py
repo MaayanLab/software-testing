@@ -13,7 +13,7 @@ class TestEnrichr(unittest.TestCase):
     BASE_URL = 'http://amp.pharm.mssm.edu/Enrichr'
 
     def setUp(self):
-        with open('assets/genes.txt') as f:
+        with open('tests/data/genes.txt') as f:
             self.input_genes = [l.strip().upper() for l in f]
 
         url = self.BASE_URL + '/addList'
@@ -25,24 +25,23 @@ class TestEnrichr(unittest.TestCase):
         response = requests.post(url, files=payload)
         if response.status_code != 200:
             raise ConnectionError('Unable to POST gene list.')
-        self.response = json.loads(response.text)
+        self.resp = json.loads(response.text)
 
         # Enrichr returns an ID before saving the list. We need to wait for
         # it to catch up.
         time.sleep(2)
 
     def test_response_has_user_list_id(self):
-        pass
+        self.assertIn('userListId', self.resp)
 
     def test_response_has_short_id(self):
-        pass
+        self.assertIn('shortId', self.resp)
 
-    # TODO: Implement this function.
-    # Hint: Enrichr will return the list you just input if you make a GET
-    #       request to:
-    #       http://amp.pharm.mssm.edu/Enrichr/view?userListId={USER LIST ID}
-    # Hint: Try using `assertListEqual()` to compare two lists. Remember
-    #       that order is important.
     def test_input_against_output(self):
-        pass
+        user_list_id = self.resp['userListId']
+        resp = requests.get(self.BASE_URL + '/view?userListId=%s' % user_list_id)
+        genes = json.loads(resp.text).get('genes')
+
+        # Verify both gene lists are the same, after sorting.
+        self.assertListEqual(sorted(genes), sorted(self.input_genes))
 
