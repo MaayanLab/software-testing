@@ -68,7 +68,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 browser = webdriver.Firefox()
 browser.get('http://amp.pharm.mssm.edu/Enrichr/')
 
-
 # 1. Select the button to use crisp gene set example
         
 # 2. Select the submit button
@@ -86,7 +85,6 @@ ActionChains(browser).move_to_element(terms[0]).perform()
 tooltip = browser.find_element_by_css_selector('#aToolTip')
         
 # 5. Print the scores
-
 
 browser.quit()
 ```
