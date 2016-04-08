@@ -18,7 +18,7 @@ A unit test cannot detect that a required feature of the program is missing. A f
 
 > **What is a "functional slice"?**
 
-There isn't a precise definition, but I prefer to think of it as unit of functionality at the level of user experience. For example, a functional test might verify that creating a new user works as expected or that menu options are different depending on if a user is logged in or not.
+There isn't a precise definition, but I prefer to think of it as unit of functionality of client experience or expectation. For example, a functional test might verify that creating a new user or an API endpoint works as expected.
 
 > **Why should I write functional test?**
 
@@ -28,7 +28,7 @@ For the [same reasons you write unit tests](https://github.com/MaayanLab/softwar
 
 For scientists and researchers, unit tests are probably more important than functional tests because they allow us to directly verify that complex algorithms work—and continue to work—as expected. That said, functional tests can give you a measure of comfort in knowing that the basic aspects of your web application work across deployments.
 
-Since many of our applications share a typical pipeline, `input gene list -> analysis -> output to user`, verifying that functional slice is probably a good start.
+Since many of our applications share a typical pipeline, `input gene list -> analyze list -> output results`, verifying that functional slice is probably a good start.
 
 ## Browser automation with Selenium
 
@@ -92,7 +92,27 @@ browser.quit()
 
 ## Wrapping Selenium with the `unittest` module
 
-Last time, we discussed writing unit tests using Python's built-in `unittest` module. We can integrate our functional tests into the same framework, allowing us to execute unit and functional tests in the same suite. Below, we'll look at functional tests for Enrichr's interface and API. We can use `nose` to run both tests as part of our test suite.
+Last time, we discussed writing unit tests using Python's built-in `unittest` module. We can integrate our functional tests into the same framework, allowing us to execute unit and functional tests in the same suite:
+
+```python
+import unittest
+
+from selenium import webdriver
+
+
+class TestEnrichr(unittest.TestCase):
+
+    def setUp(self):
+        self.browser = webdriver.Firefox()
+        self.browser.get('http://amp.pharm.mssm.edu/Enrichr/')
+
+    def test_crisp_set_enrichment(self):
+        # Add the code we just wrote here.
+        pass
+```
+
+
+Below, we'll look at functional tests for Enrichr's interface and API. We can use `nose` to run both tests as part of our test suite.
 
 - [Testing Enrichr's interface](tests/test_enrichr_ui.py)
 - [Testing Enrichr's API](tests/test_enrichr_api.py)
