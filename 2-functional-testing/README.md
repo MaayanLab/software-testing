@@ -112,7 +112,7 @@ class TestEnrichr(unittest.TestCase):
 ```
 
 
-Below, we'll look at functional tests for Enrichr's interface and API. We can use `nose` to run both tests as part of our test suite.
+Below, we have functional tests for Enrichr's interface and API. We can use `nose` to run both tests as part of our test suite.
 
 - [Testing Enrichr's interface](tests/test_enrichr_ui.py)
 - [Testing Enrichr's API](tests/test_enrichr_api.py)
