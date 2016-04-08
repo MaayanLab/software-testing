@@ -58,7 +58,6 @@ submit_btn.click()
 Before we can test Enrichr's interface, we need to learn to navigate it. Let's complete this stub to perform crisp set enrichment, select a library, and hover over the results:
 
 ```python
-import unittest
 import time
 
 from selenium import webdriver
