@@ -29,16 +29,12 @@ class TestEnrichr(unittest.TestCase):
 
         # Enrichr returns an ID before saving the list. We need to wait for
         # it to catch up.
-        time.sleep(1)
+        time.sleep(2)
 
-    # TODO: Implement this function.
-    # Hint: Try using `assertIn()`.
-    def testResponseHasUserListId(self):
+    def test_response_has_user_list_id(self):
         pass
 
-    # TODO: Implement this function.
-    # Hint: Try using `assertIn()`.
-    def testResponseHasShortId(self):
+    def test_response_has_short_id(self):
         pass
 
     # TODO: Implement this function.
@@ -47,6 +43,6 @@ class TestEnrichr(unittest.TestCase):
     #       http://amp.pharm.mssm.edu/Enrichr/view?userListId={USER LIST ID}
     # Hint: Try using `assertListEqual()` to compare two lists. Remember
     #       that order is important.
-    def testInputAgainstOutput(self):
+    def test_input_against_output(self):
         pass
 

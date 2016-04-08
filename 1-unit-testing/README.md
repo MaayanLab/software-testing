@@ -86,23 +86,6 @@ Next, let's fill out the [tests for `is_prime()`](https://github.com/MaayanLab/s
 
 This highlights how it is often easier to reason about how a unit *should work* rather than how it *does work*. We all know the basic definition of a prime number, but it can be easy to write code that does not do what we think, because we do not check the edge cases.
 
-### Testing Enrichr's API
-
-For a less trivial example, we have some [stubbed out tests](https://github.com/MaayanLab/software-testing/blob/master/1-unit-testing/test_enrichr.py) for verifying that Enrichr's API works as expected. Enrichr's API has two relevant methods:
-
-> **`POST /Enrichr/addList`:** Accepts a POST request with a newline-separated list of gene symbols and a description. Returns a `userListId` identifying the uploaded gene list.
-
-> **`GET /Enrichr/view?dataset={userListId}`:** Returns a list of genes associated with a `userListId`. 
-
-Notice the function `setUp`. The `unittest.TestCase` instance will automatically call this function before every unit test. Thus, the call stack for `TestEnrichr` is:
-
-    setUp
-    testResponseHasUserListId
-    setUp
-    testResponseHasShortId
-    setUp
-    testInputAgainstOutput
-
 ## Caveats
 - A passing test does not mean the code is correct.
 - Unit tests do not replace functional tests. A functional test tests a slice of functionality of the whole software system, based on the specificationss.
