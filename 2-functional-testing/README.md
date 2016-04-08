@@ -123,7 +123,7 @@ Remember, to run the tests with `nose`, execute:
     
 ## Degrees of coverage
 
-Between unit and functional tests, we can cover most of what we want
+Between unit and functional tests, we have test coverage for most of what we want:
 
 - Unit tests to verify core algorithms, e.g. Fisher's exact test
 - Functional tests to verify primary features, e.g. perform enrichment and verify results
