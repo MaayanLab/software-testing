@@ -53,9 +53,9 @@ submit_btn = browser.find_element_by_id('sblsbb')
 submit_btn.click()
 ```
 
-## Let's write a functional test
+## An automation script to print enrichment scores
 
-Here is a stub for testing Enrichr's user interface. Let's complete it:
+Before we can test Enrichr's interface, we need to learn to navigate it. Let's complete this stub to perform crisp set enrichment, select a library, and hover over the results:
 
 ```python
 import unittest
@@ -65,34 +65,30 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-class TestEnrichr(unittest.TestCase):
+browser = webdriver.Firefox()
+browser.get('http://amp.pharm.mssm.edu/Enrichr/')
 
-    def setUp(self):
-        self.browser = webdriver.Firefox()
-        self.browser.get('http://amp.pharm.mssm.edu/Enrichr/')
 
-    def test_crisp_set_enrichment(self):
-
-        # 1. Select the button to use crisp gene set example
+# 1. Select the button to use crisp gene set example
         
-        # 2. Select the submit button
+# 2. Select the submit button
         
-        # 3. Select a gene set library from the results
+# 3. Select a gene set library from the results
 
-        # Enrichr takes a second to Enrichr the results
-        time.sleep(6)
+# Enrichr takes a second to Enrichr the results
+time.sleep(6)
 
-        # 4. Select enrichment terms and verify the first one
+# 4. Select enrichment terms and verify the first one
 
-        # Hover over enrichment term bar to see scores. Verify that all scores
-        # are correct
-        ActionChains(self.browser).move_to_element(terms[0]).perform()
-        tooltip = self.browser.find_element_by_css_selector('#aToolTip')
+# Hover over enrichment term bar to see scores. Verify that all scores
+# are correct
+ActionChains(browser).move_to_element(terms[0]).perform()
+tooltip = browser.find_element_by_css_selector('#aToolTip')
         
-        # 5. Verify the scores
+# 5. Print the scores
 
-    def tearDown(self):
-        self.browser.quit()
+
+browser.quit()
 ```
 
 ## Wrapping Selenium with the `unittest` module
