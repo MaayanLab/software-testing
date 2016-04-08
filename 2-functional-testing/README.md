@@ -13,7 +13,7 @@ pip install selenium
 > **What is the difference between functional and unit testing?**
 
 - A **unit test** verifies that an individual unit of code works as expected, isolating it and mocking its dependencies.
-- A **functional test** verifies that a slice of functionality in a system works as expected. This may test many methods (or units), interact with dependencies, create users, and so on.
+- A **functional test** verifies that a slice of functionality in a system works as expected. This may test many methods (or units), interact with dependencies, modify a database, use web services, and so on.
 
 > **What is a "functional slice"?**
 
@@ -31,7 +31,7 @@ Since many of our applications share a typical pipeline, `input gene list -> ana
 
 ## Browser automation with Selenium
 
-We can write functional tests for web applications by automating the browser with Selenium. Here's an example:
+Since we primarily build web applications, we can write our functional tests by automating the browser with Selenium. Here's an example:
 
 ```python
 from selenium import webdriver
@@ -52,25 +52,38 @@ submit_btn = browser.find_element_by_id('sblsbb')
 submit_btn.click()
 ```
 
-Testing Enrichr:
+## Wrapping Selenium with the `unittest` module
+
+Last time, we discussed writing unit tests using Python's built-in `unittest` module. We can integrate our functional tests into the same framework, allowing us to execute unit and functional tests in the same suite. Here's [an example of testing Enrichr's interface](test_enrichr.py):
 
 ```python
+import unittest
+import time
+
 from selenium import webdriver
 
-browser = webdriver.Firefox()
-browser.get('http://amp.pharm.mssm.edu/Enrichr/')
 
-# Submit the example crisp set
-a = browser.find_element_by_id('insertCrispExample-link')
-a.click()
-submit_btn = browser.find_element_by_id('proceed-button')
-submit_btn.click()
+class TestEnrichr(unittest.TestCase):
 
-# Select the ChEA_2015 library results
-chea = browser.find_element_by_id('ChEA_2015-link')
-chea.click()
+    def setUp(self):
+        self.browser = webdriver.Firefox()
+        self.browser.get('http://amp.pharm.mssm.edu/Enrichr/')
 
-# Select the first term
-term = browser.find_element_by_xpath('//div[@class="svg-container"]/*[name()="svg"]/*[name()="g"]')
-print(term.text)
+    def test_crisp_set_enrichment(self):
+        # Submit the example crisp set.
+        self.browser.find_element_by_id('insertCrispExample-link').click()
+        self.browser.find_element_by_id('proceed-button').click()
+
+        # Select the ChEA_2015 library results
+        self.browser.find_element_by_id('ChEA_2015-link').click()
+
+        # Enrichr takes a second to Enrichr the results.
+        time.sleep(5)
+
+        # Select enrichment terms and verify the first one
+        terms = self.browser.find_elements_by_css_selector('svg > g')
+        self.assertEqual(terms[0].text, 'E2F1_18555785_ChIP-Seq_MESC_Mouse')
+
+    def tearDown(self):
+        self.browser.quit()
 ```
