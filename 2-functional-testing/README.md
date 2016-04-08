@@ -57,7 +57,7 @@ submit_btn.click()
 
 Here is a stub for testing Enrichr's user interface. Let's complete it:
 
-```
+```python
 import unittest
 import time
 
