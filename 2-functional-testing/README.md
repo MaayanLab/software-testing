@@ -78,6 +78,8 @@ browser.get('http://amp.pharm.mssm.edu/Enrichr/')
 time.sleep(6)
 
 # 4. Select enrichment terms and verify the first one
+# HINT: Use `find_elements_by_css_selector()`
+terms = ...
 
 # Hover over enrichment term bar to see scores. Verify that all scores
 # are correct
