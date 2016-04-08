@@ -22,7 +22,7 @@ class TestEnrichr(unittest.TestCase):
         # Select the ChEA_2015 library results
         self.browser.find_element_by_id('ChEA_2015-link').click()
 
-        # Enrichr takes a second to Enrichr the results.
+        # Wait while Enrichr performs analysis
         time.sleep(6)
 
         # Select enrichment terms and verify the first one

@@ -74,7 +74,7 @@ browser.get('http://amp.pharm.mssm.edu/Enrichr/')
         
 # 3. Select a gene set library from the results
 
-# Enrichr takes a second to Enrichr the results
+# Wait while Enrichr performs analysis
 time.sleep(6)
 
 # 4. Select enrichment terms and verify the first one
