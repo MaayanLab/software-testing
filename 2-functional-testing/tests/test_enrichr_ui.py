@@ -1,3 +1,6 @@
+"""Tests for Enrichr's user interface.
+"""
+
 import unittest
 import time
 

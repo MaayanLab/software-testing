@@ -1,4 +1,4 @@
-"""Unit tests for Enrichr's API.
+"""Tests for Enrichr's API.
 """
 
 import json

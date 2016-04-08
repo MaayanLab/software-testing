@@ -4,9 +4,8 @@ _Gregory Gundersen, Ma'ayan Lab meeting, 8 April 2015_
 ## Install Selenium
 
 [Selenium](http://selenium-python.readthedocs.org/index.html) is open-source software for web browser automation. It is useful for testing because we can quickly and consistently mock a user of our web application. To install Selenium with `pip`, execute:
-```
-pip install selenium
-```
+
+    pip install selenium
 
 ## Basics of functional testing
 
@@ -14,6 +13,8 @@ pip install selenium
 
 - A **unit test** verifies that an individual unit of code works as expected, isolating it and mocking its dependencies.
 - A **functional test** verifies that a slice of functionality in a system works as expected. This may test many methods (or units), interact with dependencies, modify a database, use web services, and so on.
+
+A unit test cannot detect that a required feature of the program is missing. A functional test can capture these requirements.
 
 > **What is a "functional slice"?**
 
@@ -52,9 +53,60 @@ submit_btn = browser.find_element_by_id('sblsbb')
 submit_btn.click()
 ```
 
+## Let's write a functional test
+
+Here is a stub for testing Enrichr's user interface. Let's complete it:
+
+```
+import unittest
+import time
+
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+
+
+class TestEnrichr(unittest.TestCase):
+
+    def setUp(self):
+        self.browser = webdriver.Firefox()
+        self.browser.get('http://amp.pharm.mssm.edu/Enrichr/')
+
+    def test_crisp_set_enrichment(self):
+
+        # Select the button to use crisp gene set example
+        # Select the submit button
+        # Select a gene set library from the results
+
+        # Enrichr takes a second to Enrichr the results.
+        time.sleep(6)
+
+        # Select enrichment terms and verify the first one
+
+        # Hover over enrichment term bar to see scores. Verify that all scores
+        # are correct
+        ActionChains(self.browser).move_to_element(terms[0]).perform()
+        tooltip = self.browser.find_element_by_css_selector('#aToolTip')
+        
+        # Verify the scores
+
+    def tearDown(self):
+        self.browser.quit()
+```
+
 ## Wrapping Selenium with the `unittest` module
 
 Last time, we discussed writing unit tests using Python's built-in `unittest` module. We can integrate our functional tests into the same framework, allowing us to execute unit and functional tests in the same suite. Below, we'll look at functional tests for Enrichr's interface and API. We can use `nose` to run both tests as part of our test suite.
 
 - [Testing Enrichr's interface](tests/test_enrichr_ui.py)
 - [Testing Enrichr's API](tests/test_enrichr_api.py)
+
+Remember, to run the tests with `nose`, execute:
+
+    nosetests -v
+    
+## Degrees of coverage
+
+Between unit and functional tests, we can cover most of what we want
+
+- Unit tests to verify core algorithms, e.g. Fisher's exact test
+- Functional tests to verify primary features, e.g. perform enrichment and verify results
